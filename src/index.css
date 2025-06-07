@@ -2,7 +2,7 @@
 *,*:before,*:after{box-sizing: border-box;}
 a:focus,a:active{outline: none;}
 nav,footer,header{display: block;}
-html,body{height: 100%; width: 100%; font-size: 16px; line-height: 16px;font-family: Roboto, serif;}
+html,body{height: 100%; width: 100%; font-size: 14px; line-height: 16px;font-family: "noto sans", sans-serif;}
 input,button,textarea{font-family: inherit;}
 button{cursor: pointer;}
 a,a:visited{text-decoration: none;}
@@ -15,7 +15,14 @@ h1,h2,h3,h4,h5,h6{font-size: inherit; font-weight: inherit; margin: 0}
 ._container{max-width: 1160px;margin: 0 auto;padding: 0 15px; box-sizing: border-box}
 .page{flex: 1 1 auto;}
 .flex {
+    width: 100%;
     padding-top: 30px;
     display: flex;
     justify-content: space-between;
 }
+
+.current{
+    color: rgba(0, 0, 0, 0.54);
+}
+
+
