@@ -14,6 +14,9 @@ import PublicationPage from "./pages/publicationPage/PublicationPage";
 import SubmissionsPage from "./pages/submissionsPage/SubmissionsPage";
 import NotFoundPage from "./pages/notFoundPage/NotFoundPage";
 import SideBar from "./components/sideBar/SideBar";
+import ReadersPage from "./pages/readersPage/ReadersPage";
+import AuthorsPage from "./pages/authorsPage/AuthorsPage";
+import LibrarianPage from "./pages/librarianPage/LibrarianPage";
 
 function App() {
   return (
@@ -32,6 +35,9 @@ function App() {
                 <Route path="/indexing" element={<IndexingPage />} />
                 <Route path="/publication" element={<PublicationPage />} />
                 <Route path="/submissions" element={<SubmissionsPage />} />
+                <Route path="/readers" element={<ReadersPage />} />
+                <Route path="/authors" element={<AuthorsPage />} />
+                <Route path="/librarian" element={<LibrarianPage />} />
                 <Route path='*' element={<NotFoundPage/>} />
             </Routes>
           <div>

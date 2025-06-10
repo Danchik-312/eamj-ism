@@ -10,13 +10,13 @@ const Header = () => {
                 <div className={classes(styles.header__logo)}></div>
                 <nav className={classes(styles.header__menu)}>
                     <ul className={classes(styles.menu__list)}>
-                        <li className={styles.menu__item}><NavLink to="/" className={styles.menu__link}>Home</NavLink></li>
+                        <li className={styles.menu__item}><NavLink to="/home" className={styles.menu__link}>Home</NavLink></li>
                         <li className={styles.menu__item}><NavLink to="/" className={styles.menu__link}>Current</NavLink></li>
                         <li className={styles.menu__item}><NavLink to="/" className={styles.menu__link}>Archives</NavLink></li>
                         <li className={styles.menu__item}><NavLink to="/" className={styles.menu__link}>Indexing</NavLink></li>
                         <li className={styles.menu__item}><NavLink to="/" className={styles.menu__link}>Editorial
                             Team</NavLink></li>
-                        <li className={styles.menu__item}><NavLink to="/" className={styles.menu__link}>Publication
+                        <li className={styles.menu__item}><NavLink to="/publication" className={styles.menu__link}>Publication
                             Ethics</NavLink></li>
                         <li className={styles.menu__item}><NavLink to="/" className={styles.menu__link}>Announcements</NavLink>
                         </li>

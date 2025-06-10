@@ -9,9 +9,9 @@ const SideBar = () => {
                 <span className={styles.title}>Information</span>
                 <div className={styles.content}>
                     <ul className={styles.menu__list}>
-                        <li className={styles.menu__item}><Link to="/" className={styles.menu__link}>For Readers</Link></li>
-                        <li className={styles.menu__item}><Link to="/" className={styles.menu__link}>For Authors</Link></li>
-                        <li className={styles.menu__item}><Link to="/" className={styles.menu__link}>For Librarians</Link></li>
+                        <li className={styles.menu__item}><Link to="/readers" className={styles.menu__link}>For Readers</Link></li>
+                        <li className={styles.menu__item}><Link to="/authors" className={styles.menu__link}>For Authors</Link></li>
+                        <li className={styles.menu__item}><Link to="/librarian" className={styles.menu__link}>For Librarians</Link></li>
                     </ul>
                 </div>
             </div>
