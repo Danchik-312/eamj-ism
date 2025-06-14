@@ -9,7 +9,7 @@ const PublicationPage = () => {
                 <ol className={styles.nav__menu}>
                     <li className=""><Link to="/" className={styles.nav__link}>Home</Link><span
                         className={styles.separator}>/</span></li>
-                    <li className="">Aims and scope</li>
+                    <li className="">Publication Ethics</li>
                 </ol>
                 <h1 className={styles.publicat__title}>Publication Ethics</h1>
                 <div className={styles.publicat__content}>

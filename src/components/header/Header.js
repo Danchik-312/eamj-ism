@@ -11,17 +11,17 @@ const Header = () => {
                 <nav className={classes(styles.header__menu)}>
                     <ul className={classes(styles.menu__list)}>
                         <li className={styles.menu__item}><NavLink to="/home" className={styles.menu__link}>Home</NavLink></li>
-                        <li className={styles.menu__item}><NavLink to="/" className={styles.menu__link}>Current</NavLink></li>
-                        <li className={styles.menu__item}><NavLink to="/" className={styles.menu__link}>Archives</NavLink></li>
-                        <li className={styles.menu__item}><NavLink to="/" className={styles.menu__link}>Indexing</NavLink></li>
-                        <li className={styles.menu__item}><NavLink to="/" className={styles.menu__link}>Editorial
+                        <li className={styles.menu__item}><NavLink to="/current" className={styles.menu__link}>Current</NavLink></li>
+                        <li className={styles.menu__item}><NavLink to="/archives" className={styles.menu__link}>Archives</NavLink></li>
+                        <li className={styles.menu__item}><NavLink to="/indexing" className={styles.menu__link}>Indexing</NavLink></li>
+                        <li className={styles.menu__item}><NavLink to="/editorial" className={styles.menu__link}>Editorial
                             Team</NavLink></li>
                         <li className={styles.menu__item}><NavLink to="/publication" className={styles.menu__link}>Publication
                             Ethics</NavLink></li>
-                        <li className={styles.menu__item}><NavLink to="/" className={styles.menu__link}>Announcements</NavLink>
+                        <li className={styles.menu__item}><NavLink to="/announcements" className={styles.menu__link}>Announcements</NavLink>
                         </li>
-                        <li className={styles.menu__item}><NavLink to="/" className={styles.menu__link}>Contact</NavLink></li>
-                        <li className={styles.menu__item}><NavLink to="/" className={styles.menu__link}>Submissions</NavLink>
+                        <li className={styles.menu__item}><NavLink to="/contact" className={styles.menu__link}>Contact</NavLink></li>
+                        <li className={styles.menu__item}><NavLink to="/submissions" className={styles.menu__link}>Submissions</NavLink>
                         </li>
                     </ul>
                 </nav>
