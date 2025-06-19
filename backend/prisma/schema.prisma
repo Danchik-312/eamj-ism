@@ -1,0 +1,37 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model User {
+  id        Int       @id @default(autoincrement())
+  email     String    @unique
+  password  String
+  createdAt DateTime  @default(now())
+  articles  Article[]
+}
+
+model Journal {
+  id        Int       @id @default(autoincrement())
+  title     String
+  issue     Int
+  createdAt DateTime  @default(now())
+  articles  Article[]
+}
+
+model Article {
+  id         Int      @id @default(autoincrement())
+  title      String
+  author     String
+  pages      String
+  fileUrl    String
+  journalId  Int
+  journal    Journal  @relation(fields: [journalId], references: [id])
+  userId     Int
+  user       User     @relation(fields: [userId], references: [id])
+  status     String   @default("pending") // pending, approved, rejected
+}
