@@ -15,6 +15,13 @@ model User {
   articles  Article[]
 }
 
+model Admin {
+  id        Int      @id @default(autoincrement())
+  email     String   @unique
+  password  String
+  createdAt DateTime @default(now())
+}
+
 model Journal {
   id        Int       @id @default(autoincrement())
   title     String
