@@ -2,57 +2,38 @@ import React from "react";
 import styles from "./AdminLoginPage.module.css";
 import {useState} from "react";
 import {useNavigate} from "react-router-dom";
+import axios from "axios";
 
 
 const AdminLoginPage = () => {
-    const [username, setUsername] = useState("");
+    const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
     const [error, setError] = useState("");
     const navigate = useNavigate();
 
-    const handleSubmit = (e) => {
+    const handleSubmit = async (e) => {
         e.preventDefault();
+        setError("");
 
-        if (username === "admin" && password === "password123") {
-
-            localStorage.setItem("isAdmin", "true");
-
-            navigate("/admin/main"); // Переход в админку
-        } else {
-            setError("Неверный логин или пароль");
+        try {
+            const res = await axios.post("http://localhost:3001/admin/login", { email, password });
+            const { token } = res.data;
+            localStorage.setItem("adminToken", token);
+            navigate("/admin/main"); // переход в админку после успешного логина
+        } catch (err) {
+            setError("Неверный email или пароль");
         }
     };
 
     return (
         <div className={styles.login}>
-            <form onSubmit={handleSubmit} className={styles.login__content}>
-                <h2 className={styles.login__content__title}>Admin Login</h2>
-
-                {error && <p className="text-red-500 text-sm mb-2">{error}</p>}
-
-                <input
-                    type="text"
-                    placeholder="Username"
-                    value={username}
-                    onChange={(e) => setUsername(e.target.value)}
-                    className={styles.login__content__input}
-                    required
-                />
-                <input
-                    type="password"
-                    placeholder="Password"
-                    value={password}
-                    onChange={(e) => setPassword(e.target.value)}
-                    className={styles.login__content__input}
-                    required
-                />
-
-                <button
-                    type="submit"
-                    className={styles.login__content__button}
-                >
-                    Войти
-                </button>
+            <form onSubmit={handleSubmit}>
+                <input type="email" placeholder="Email" value={email} onChange={e => setEmail(e.target.value)}
+                       required/>
+                <input type="password" placeholder="Пароль" value={password} onChange={e => setPassword(e.target.value)}
+                       required/>
+                <button type="submit">Войти</button>
+                {error && <p style={{color: "red"}}>{error}</p>}
             </form>
         </div>
     )
